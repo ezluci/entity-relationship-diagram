@@ -1,0 +1,197 @@
+{
+	"entities": [
+		{
+			"name": "PARFUM",
+			"x": 18,
+			"y": 99,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id",
+				"* denumire",
+				"* cantitate_ml",
+				"* id_brand",
+				"* note"
+			]
+		},
+		{
+			"name": "BRAND_PARFUM",
+			"x": 408,
+			"y": 299,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id_brand",
+				"* denumire",
+				"* cifra_afaceri",
+				"* adresa_magazin",
+				"* link_site",
+				"o data_infiintare"
+			]
+		},
+		{
+			"name": "COMANDA_ONLINE",
+			"x": 18,
+			"y": 399,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id",
+				"* pret",
+				"* id_utilizator",
+				"* id_brand_parfum",
+				"* id_firma_transport",
+				"* data_plasare",
+				"* adresă_livrare"
+			]
+		},
+		{
+			"name": "UTILIZATOR",
+			"x": 408,
+			"y": 599,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# email",
+				"* prenume",
+				"* nume",
+				"* țară",
+				"* județ",
+				"* localitate"
+			]
+		},
+		{
+			"name": "PERSOANA_FIZICA",
+			"x": 658,
+			"y": 399,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# CNP",
+				"* prenume",
+				"* nume",
+				"o țară",
+				"o județ",
+				"o localitate"
+			]
+		},
+		{
+			"name": "ANGAJAT",
+			"x": 708,
+			"y": 99,
+			"h": 240,
+			"w": 220,
+			"attributes": [
+				"# cnp",
+				"* serie_buletin",
+				"* nr_buletin",
+				"* nume",
+				"* prenume",
+				"* post",
+				"* judet",
+				"* localitate",
+				"* strada",
+				"* bloc"
+			]
+		},
+		{
+			"name": "MAGAZIN_FIZIC",
+			"x": 1008,
+			"y": 99,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# cod poștal",
+				"* denumire",
+				"* locație",
+				"* nr_angajați",
+				"* telefon_contact",
+				"o nr_parfumuri_pe_stoc",
+				"o cupon_reducere"
+			]
+		},
+		{
+			"name": "STOC",
+			"x": 1008,
+			"y": 349,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"#data_preluare",
+				"*cantitate_produse"
+			]
+		},
+		{
+			"name": "CARD_MAGAZIN",
+			"x": 908,
+			"y": 699,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# nr",
+				"* nume_detinator",
+				"*valabilitate"
+			]
+		},
+		{
+			"name": "FIRMA_TRANSPORT",
+			"x": 18,
+			"y": 799,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id",
+				"* pret",
+				"* id_utilizator",
+				"* id_brand_parfum",
+				"* id_firma_transport",
+				"* data_plasare",
+				"* adresă_livrare"
+			]
+		},
+		{
+			"name": "DEPOZIT",
+			"x": 1408,
+			"y": 99,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id_depozit",
+				"*judet",
+				"*localitate",
+				"* strada",
+				"* nr "
+			]
+		}
+	],
+	"relations": [
+		{
+			"name1": "PARFUM",
+			"name2": "BRAND_PARFUM"
+		},
+		{
+			"name1": "COMANDA_ONLINE",
+			"name2": "BRAND_PARFUM"
+		},
+		{
+			"name1": "COMANDA_ONLINE",
+			"name2": "UTILIZATOR"
+		},
+		{
+			"name1": "ANGAJAT",
+			"name2": "MAGAZIN_FIZIC"
+		},
+		{
+			"name1": "MAGAZIN_FIZIC",
+			"name2": "STOC"
+		},
+		{
+			"name1": "PERSOANA_FIZICA",
+			"name2": "CARD_MAGAZIN"
+		},
+		{
+			"name1": "MAGAZIN_FIZIC",
+			"name2": "DEPOZIT"
+		}
+	]
+}

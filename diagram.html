@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>proiect info1!!!!!!</title>
+      
+      <link rel="stylesheet" href="entity-relationship-diagram/style.css">
+      <script src="entity-relationship-diagram/entity.js"></script>
+      <script src="entity-relationship-diagram/relation.js"></script>
+      <script src="entity-relationship-diagram/events.js"></script>
+
+      <link rel="stylesheet" href="css/diagram.css">
+   </head>
+   <body>
+      <script type="module">
+         // load the data from diagram.json
+         import data from './json/diagram.json' assert { type: 'json' };
+
+         data.entities.forEach(entity => {
+            new Entity(entity.x, entity.y, entity.h, entity.w, entity.name, entity.attributes);
+         });
+         data.relations.forEach(relation => {
+            new Relation(relation.name1, relation.name2);
+         });
+      </script>
+
+      <div id="navbar">
+         <button type="button" id="navbar-freemove" class="navbar-button">Free move: ON</button>
+         <button type="button" id="navbar-dragentities" class="navbar-button">Drag entities: OFF</button>
+         <button type="button" id="navbar-expandentities" class="navbar-button">Expand all entities</button>
+         <button type="button" id="navbar-shrinkentities" class="navbar-button">Shrink all entities</button>
+         <button type="button" id="navbar-displayjson" class="navbar-button">Display current diagram.json</button>
+         <a href="..">back to index.html</a>
+      </div>
+
+      <script src="js/navbar.js"></script>
+   </body>
+</html>
