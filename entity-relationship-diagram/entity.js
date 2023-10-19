@@ -11,12 +11,13 @@ class Entity {
 
       this.elem.style.left = `${this.x}px`;
       this.elem.style.top = `${this.y}px`;
-      this.elem.style.height = `${this.hideAttr ? 28 : this.h}px`;
+      this.elem.style.height = `${this.h}px`;
       this.elem.style.width = `${this.w}px`;
    }
 
    hideAttributes() {
       this.hideAttr = true;
+      this.h = 28;
       this.attributesElem.forEach(attElem => {
          attElem.hidden = true;
       });
@@ -25,12 +26,17 @@ class Entity {
 
    showAttributes() {
       this.hideAttr = false;
+      this.h = this.initialH;
       this.attributesElem.forEach(attElem => {
          attElem.hidden = false;
       });
       this.update();
    }
-   
+
+   getCenter() {
+      return {x: this.x + this.w / 2, y: this.y + (this.hideAttr ? 28 : this.h) / 2};
+   }
+
    constructor(x, y, h, w, name, attributes) {
       if (entities.has(name)) {
          console.error(`Entity ${name} appears more than two times!`);
@@ -40,6 +46,7 @@ class Entity {
 
       this.x = x;
       this.y = y;
+      this.initialH = h;
       this.h = h;
       this.w = w;
       this.name = name;
@@ -48,6 +55,7 @@ class Entity {
       this.elem.draggable = true;
       this.elem.style.height = `${h}px`;
       this.elem.style.width = `${w}px`;
+      this.elem.style.padding = '0';
 
       // when clicked
       this.hideAttr = true;
@@ -90,14 +98,9 @@ class Entity {
          this.attributesElem.push(attElem);
          this.elem.appendChild(attElem);
       });
+
       this.update(x, y);
-
-
+      this.showAttributes();
       document.body.appendChild(this.elem);
-   }
-
-
-   getCenter() {
-      return {x: this.x + this.w / 2, y: this.y + (this.hideAttr ? 28 : this.h) / 2};
    }
 };

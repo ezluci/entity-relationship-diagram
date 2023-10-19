@@ -28,8 +28,8 @@
    max-height: none;
 }
 
-.relation {
-   border-top: 3px solid red;
+.relation-line {
+   border-width: 8px;
+   border-color: red;
    position: fixed;
-   transform-origin: left;
 }

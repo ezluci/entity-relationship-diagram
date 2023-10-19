@@ -1,4 +1,32 @@
-body { 
-   background-color: #e6dddd;
+@font-face {
+   font-family: 'Amatic';
+   src: url('../fonts/Beatrix-Antiqua/Beatrix-Antiqua-Medium-trial.ttf');
+   src: url('../fonts/Beatrix-Antiqua/Beatrix-Antiqua-Medium-trial.ttf') format('truetype');
+   /*
+
+  src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
+       url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+       url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
+       url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
+   */
+}
+
+
+body {
+   /* background-color: #e6dddd; */
    color: rgb(0, 0, 0);
+   font-size: 20px;
+   font-family: 'Amatic';
+   background-image: url('../assets/story-background.jpg');
+   background-attachment: fixed;
+   background-size: 100%;
+}
+
+
+img {
+   float: right;
+   width: 300px;
+   height: 300px;
+   padding: 10px;
+   padding-right: 40px;
 }

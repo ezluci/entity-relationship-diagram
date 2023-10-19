@@ -1,4 +1,41 @@
+@font-face {
+   font-family: 'Amatic';
+   src: url('../fonts/Beatrix-Antiqua/Beatrix-Antiqua-Medium-trial.ttf');
+   src: url('../fonts/Beatrix-Antiqua/Beatrix-Antiqua-Medium-trial.ttf') format('truetype');
+   /*
+
+  src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
+       url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+       url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
+       url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
+   */
+}
+
 body {
-   background-color: rgba(102, 100, 100, 0.982);
-   color: rgb(28, 50, 50);
+   background-color: #f5e6ab;
+}
+
+.buttons {
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   text-align: center;
+}
+
+button {
+   margin: 13px;
+   position: relative;
+   width: 600px;
+   height: 500px;
+   top: 50%;
+   font-family: 'Amatic';
+   background-color: rgb(107, 228, 153);
+   transform: translateY(-50%);
+   border-radius: 40px;
+   font-size: 50px;
+   border-style: solid;
+   border-color: black;
+   border-width: 7px;
 }

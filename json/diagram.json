@@ -2,8 +2,8 @@
 	"entities": [
 		{
 			"name": "PARFUM",
-			"x": 18,
-			"y": 99,
+			"x": 1094,
+			"y": 152,
 			"h": 200,
 			"w": 220,
 			"attributes": [
@@ -11,63 +11,93 @@
 				"* denumire",
 				"* cantitate_ml",
 				"* id_brand",
+				"* pret",
 				"* note"
 			]
 		},
 		{
+			"name": "VANZARI",
+			"x": 1775,
+			"y": 430,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id_comanda",
+				"# id_parfum",
+				"* nr_obiecte",
+				"* id_cumparator"
+			]
+		},
+		{
 			"name": "BRAND_PARFUM",
-			"x": 408,
-			"y": 299,
+			"x": 486,
+			"y": 155,
 			"h": 200,
 			"w": 220,
 			"attributes": [
 				"# id_brand",
 				"* denumire",
-				"* cifra_afaceri",
-				"* adresa_magazin",
-				"* link_site",
-				"o data_infiintare"
+				"* cod poștal",
+				"* judet",
+				"* localitate",
+				"* strada",
+				"* link_site"
 			]
 		},
 		{
 			"name": "COMANDA_ONLINE",
-			"x": 18,
-			"y": 399,
+			"x": 497,
+			"y": 460,
+			"h": 200,
+			"w": 240,
+			"attributes": [
+				"# id",
+				"# id_rating",
+				"# id_factura_client",
+				"* id_utilizator",
+				"* id_firma_transport",
+				"* data_plasare",
+				"* adresa_livrare"
+			]
+		},
+		{
+			"name": "FACTURA_CLIENT",
+			"x": 912,
+			"y": 1100,
 			"h": 200,
 			"w": 220,
 			"attributes": [
 				"# id",
-				"* pret",
-				"* id_utilizator",
-				"* id_brand_parfum",
-				"* id_firma_transport",
-				"* data_plasare",
-				"* adresă_livrare"
+				"* id_comanda_online",
+				"* pret"
 			]
 		},
 		{
 			"name": "UTILIZATOR",
-			"x": 408,
-			"y": 599,
+			"x": 1100,
+			"y": 688,
 			"h": 200,
 			"w": 220,
 			"attributes": [
-				"# email",
+				"# id",
+				"* email",
 				"* prenume",
 				"* nume",
-				"* țară",
-				"* județ",
-				"* localitate"
+				"o țară",
+				"o județ",
+				"o localitate",
+				"o nr_telefon"
 			]
 		},
 		{
 			"name": "PERSOANA_FIZICA",
-			"x": 658,
-			"y": 399,
+			"x": 2018,
+			"y": 1318,
 			"h": 200,
 			"w": 220,
 			"attributes": [
-				"# CNP",
+				"# id",
+				"* cnp",
 				"* prenume",
 				"* nume",
 				"o țară",
@@ -77,8 +107,8 @@
 		},
 		{
 			"name": "ANGAJAT",
-			"x": 708,
-			"y": 99,
+			"x": 2854,
+			"y": 120,
 			"h": 240,
 			"w": 220,
 			"attributes": [
@@ -91,19 +121,34 @@
 				"* judet",
 				"* localitate",
 				"* strada",
-				"* bloc"
+				"o bloc"
+			]
+		},
+		{
+			"name": "CONTRACT_ANGAJAT",
+			"x": 3472,
+			"y": 141,
+			"h": 200,
+			"w": 250,
+			"attributes": [
+				"# serie",
+				"* id_angajat",
+				"* data_inceput",
+				"* data_final"
 			]
 		},
 		{
 			"name": "MAGAZIN_FIZIC",
-			"x": 1008,
-			"y": 99,
-			"h": 200,
+			"x": 2315,
+			"y": 118,
+			"h": 240,
 			"w": 220,
 			"attributes": [
 				"# cod poștal",
+				"* judet",
+				"* localitate",
+				"* strada",
 				"* denumire",
-				"* locație",
 				"* nr_angajați",
 				"* telefon_contact",
 				"o nr_parfumuri_pe_stoc",
@@ -111,87 +156,384 @@
 			]
 		},
 		{
-			"name": "STOC",
-			"x": 1008,
-			"y": 349,
+			"name": "BON_FISCAL",
+			"x": 1856,
+			"y": 839,
+			"h": 100,
+			"w": 220,
+			"attributes": [
+				"# id_comanda",
+				"* data_tiparire"
+			]
+		},
+		{
+			"name": "PRODUS",
+			"x": 2381,
+			"y": 924,
 			"h": 200,
 			"w": 220,
 			"attributes": [
-				"#data_preluare",
-				"*cantitate_produse"
+				"# denumire",
+				"* cantitate_ml",
+				"* numar",
+				"* descriere",
+				"* categorie",
+				"* pret"
 			]
 		},
 		{
 			"name": "CARD_MAGAZIN",
-			"x": 908,
-			"y": 699,
-			"h": 200,
-			"w": 220,
-			"attributes": [
-				"# nr",
-				"* nume_detinator",
-				"*valabilitate"
-			]
-		},
-		{
-			"name": "FIRMA_TRANSPORT",
-			"x": 18,
-			"y": 799,
+			"x": 2631,
+			"y": 1368,
 			"h": 200,
 			"w": 220,
 			"attributes": [
 				"# id",
-				"* pret",
-				"* id_utilizator",
-				"* id_brand_parfum",
-				"* id_firma_transport",
-				"* data_plasare",
-				"* adresă_livrare"
+				"* id_persoana",
+				"* data_expirare"
+			]
+		},
+		{
+			"name": "PRODUCATOR",
+			"x": 3243,
+			"y": 1418,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# denumire",
+				"* nr_produse",
+				"* telefon_contact",
+				"* țară_origine",
+				"* categorie"
+			]
+		},
+		{
+			"name": "FIRMA_TRANSPORT",
+			"x": 68,
+			"y": 750,
+			"h": 100,
+			"w": 230,
+			"attributes": [
+				"# id",
+				"* nume"
+			]
+		},
+		{
+			"name": "CURIER",
+			"x": 66,
+			"y": 1106,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id",
+				"* nume",
+				"* rating",
+				"* vehicul_utilizat"
 			]
 		},
 		{
 			"name": "DEPOZIT",
-			"x": 1408,
-			"y": 99,
+			"x": 2348,
+			"y": 548,
 			"h": 200,
 			"w": 220,
 			"attributes": [
 				"# id_depozit",
-				"*judet",
-				"*localitate",
+				"* judet",
+				"* localitate",
 				"* strada",
 				"* nr "
+			]
+		},
+		{
+			"name": "CONTRACT_APROVIZIONARE",
+			"x": 2788,
+			"y": 564,
+			"h": 200,
+			"w": 350,
+			"attributes": [
+				"# data_semnatura",
+				"# id_firma",
+				"* durata_contract"
+			]
+		},
+		{
+			"name": "RATING",
+			"x": 490,
+			"y": 1098,
+			"h": 200,
+			"w": 220,
+			"attributes": [
+				"# id",
+				"* numar_stele",
+				"* data_rating"
+			]
+		},
+		{
+			"name": "FACTURA_APROVIZIONARE",
+			"x": 3360,
+			"y": 582,
+			"h": 200,
+			"w": 350,
+			"attributes": [
+				"# data_tiparire",
+				"# id",
+				"* numar_produse"
+			]
+		},
+		{
+			"name": "FURNIZOR",
+			"x": 3949,
+			"y": 602,
+			"h": 150,
+			"w": 220,
+			"attributes": [
+				"# nume",
+				"* nr_produse",
+				"* telefon_contact"
 			]
 		}
 	],
 	"relations": [
 		{
 			"name1": "PARFUM",
-			"name2": "BRAND_PARFUM"
+			"options1": {
+				"optional": false,
+				"cardinality": "many"
+			},
+			"name2": "BRAND_PARFUM",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
 		},
 		{
 			"name1": "COMANDA_ONLINE",
-			"name2": "BRAND_PARFUM"
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "VANZARI",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "PARFUM",
+			"options1": {
+				"optional": true,
+				"cardinality": "many"
+			},
+			"name2": "VANZARI",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
 		},
 		{
 			"name1": "COMANDA_ONLINE",
-			"name2": "UTILIZATOR"
+			"options1": {
+				"optional": false,
+				"cardinality": "many"
+			},
+			"name2": "UTILIZATOR",
+			"options2": {
+				"optional": true,
+				"cardinality": "one"
+			}
 		},
 		{
 			"name1": "ANGAJAT",
-			"name2": "MAGAZIN_FIZIC"
-		},
-		{
-			"name1": "MAGAZIN_FIZIC",
-			"name2": "STOC"
+			"options1": {
+				"optional": false,
+				"cardinality": "many"
+			},
+			"name2": "MAGAZIN_FIZIC",
+			"options2": {
+				"optional": true,
+				"cardinality": "one"
+			}
 		},
 		{
 			"name1": "PERSOANA_FIZICA",
-			"name2": "CARD_MAGAZIN"
+			"options1": {
+				"optional": true,
+				"cardinality": "one"
+			},
+			"name2": "CARD_MAGAZIN",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "COMANDA_ONLINE",
+			"options1": {
+				"optional": false,
+				"cardinality": "many"
+			},
+			"name2": "FIRMA_TRANSPORT",
+			"options2": {
+				"optional": true,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "FIRMA_TRANSPORT",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "CURIER",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "PRODUCATOR",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "CARD_MAGAZIN",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "ANGAJAT",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "CONTRACT_ANGAJAT",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "COMANDA_ONLINE",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "FACTURA_CLIENT",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "DEPOZIT",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "CONTRACT_APROVIZIONARE",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
 		},
 		{
 			"name1": "MAGAZIN_FIZIC",
-			"name2": "DEPOZIT"
+			"options1": {
+				"optional": true,
+				"cardinality": "one"
+			},
+			"name2": "VANZARI",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "BON_FISCAL",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "VANZARI",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "PRODUS",
+			"options1": {
+				"optional": false,
+				"cardinality": "many"
+			},
+			"name2": "BON_FISCAL",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "CONTRACT_APROVIZIONARE",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "FACTURA_APROVIZIONARE",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "RATING",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "COMANDA_ONLINE",
+			"options2": {
+				"optional": true,
+				"cardinality": "one"
+			}
+		},
+		{
+			"name1": "FURNIZOR",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "FACTURA_APROVIZIONARE",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "PERSOANA_FIZICA",
+			"options1": {
+				"optional": false,
+				"cardinality": "one"
+			},
+			"name2": "BON_FISCAL",
+			"options2": {
+				"optional": false,
+				"cardinality": "many"
+			}
+		},
+		{
+			"name1": "MAGAZIN_FIZIC",
+			"options1": {
+				"optional": false,
+				"cardinality": "many"
+			},
+			"name2": "DEPOZIT",
+			"options2": {
+				"optional": false,
+				"cardinality": "one"
+			}
 		}
 	]
 }

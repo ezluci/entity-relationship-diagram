@@ -19,18 +19,20 @@
             new Entity(entity.x, entity.y, entity.h, entity.w, entity.name, entity.attributes);
          });
          data.relations.forEach(relation => {
-            new Relation(relation.name1, relation.name2);
+            new Relation(relation.name1, relation.options1, relation.name2, relation.options2);
          });
       </script>
 
-      <div id="navbar">
+      <a class="back-button" href="..">back to index.html</a>
+      <!-- Navbar
+      <div style="height: 35px" id="navbar">
          <button type="button" id="navbar-freemove" class="navbar-button">Free move: ON</button>
          <button type="button" id="navbar-dragentities" class="navbar-button">Drag entities: OFF</button>
          <button type="button" id="navbar-expandentities" class="navbar-button">Expand all entities</button>
          <button type="button" id="navbar-shrinkentities" class="navbar-button">Shrink all entities</button>
          <button type="button" id="navbar-displayjson" class="navbar-button">Display current diagram.json</button>
-         <a href="..">back to index.html</a>
       </div>
+      -->
 
       <script src="js/navbar.js"></script>
    </body>

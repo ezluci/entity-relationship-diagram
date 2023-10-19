@@ -1,3 +1,5 @@
+'use strict';
+
 const navbar = document.querySelector('#navbar');
 
 
@@ -54,12 +56,17 @@ displayJsonButton.addEventListener('click', event => {
    const json = {entities: [], relations: []};
 
    entities.forEach(entity => {
-      const entityObj = {name: entity.name, x: entity.x, y: entity.y, h: entity.h, w: entity.w, attributes: entity.attributes};
+      const entityObj = {name: entity.name, x: entity.x, y: entity.y, h: entity.initialH, w: entity.w, attributes: entity.attributes};
       json.entities.push(entityObj);
    });
 
    relations.forEach(relation => {
-      const relationObj = {name1: relation.e1.name, name2: relation.e2.name};
+      const relationObj = {
+         name1: relation.e1.name,
+         options1: relation.options1,
+         name2: relation.e2.name,
+         options2: relation.options2
+      };
       json.relations.push(relationObj);
    });
 
